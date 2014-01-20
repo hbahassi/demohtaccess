@@ -1,0 +1,16 @@
+DirectoryIndex index.php
+Options All -Indexes
+#deny from all
+#allow from 10.30.245.59
+#redirect /demohtaccess http://www.google.com
+ErrorDocument 404 /demohtaccess/404.html
+RewriteEngine On
+RewriteRule ^accueil$ index.php
+#RewriteRule ^hist/$ statique/hist.html
+#RewriteRule ^contact/$ statique/contact.html
+RewriteRule ^([a-z]+)/$ statique/$1.html
+#cacher les nom de variables
+
+RewriteRule ^categ/([0-9]+)/$ catalogue.php?categ=$1
+RewriteRule ^modele/([0-9]+)/$ catalogue.php?modele=$1
+
